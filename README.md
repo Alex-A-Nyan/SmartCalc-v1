@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Smart_calculatorV1.ru</title>
-	<style>
-		body {
-		 background: #b53622; 
-		 color: #fff;
-		}
-	 </style>
-</head>
-<body>
-	<h1>SmartCalc. V1.0<img src="QT/TheFlash.png" width="150" height="197" 
+<h1>SmartCalc. V1.0<img src="QT/TheFlash.png" width="150" height="197" 
 		alt="TheFlashIcon" align="right" 
 		vspace="0" hspace="10"></h1>
 		
@@ -138,6 +126,3 @@ are permitted by confirmation of its original creator.</p>
 
 
 ====================================================================================================
-
-</body>
-</html>
