@@ -1,0 +1,1369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Calculator_C</class>
+ <widget class="QMainWindow" name="Calculator_C">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1620</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>21</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Calculator_C</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="Button_func_sin">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>90</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>sin()</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_func_cos">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>90</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>cos()</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_func_acos">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>149</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>acos()</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_func_asin">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>149</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>asin()</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_func_atan">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>149</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>atan()</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_func_ln">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>208</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>ln()</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_func_log">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>208</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>log()</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_func_ceil">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>208</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>ceil</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_1">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>208</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>1</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_3">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>208</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>3</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_6">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>149</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>6</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_5">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>149</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>5</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_2">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>208</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>2</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_4">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>149</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>4</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_AC">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>267</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>AC</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_dot">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>267</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>.</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_oper_unar_plus">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>208</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>(+)</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_oper_power">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>90</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>^</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_oper_sqrt">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>149</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>sqrt</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_oper_multi">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>90</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>*</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_oper_minus">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>149</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>-</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_oper_unar_minus">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>267</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>(-)</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_oper_close">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>267</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>)</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_oper_count">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>272</y>
+      <width>84</width>
+      <height>54</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  background-color: #cbba00;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>=</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_oper_plus">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>90</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>+</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_oper_mod">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>208</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>mod</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_oper_open">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>208</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>(</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_oper_divide">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>149</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>/</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Background_theFlash">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1920</width>
+      <height>1080</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="sizeIncrement">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>Reverse.jpeg</pixmap>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_func_eps">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>267</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  Setstylesheet (&quot;Qpushbutton{border-image:url(~/Users/valeryje/School21/C7-Calculator/NewCalc/src/QT/Reverse.jpeg);}&quot;);
+}
+</string>
+    </property>
+    <property name="text">
+     <string>e</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_func_tan">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>90</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>tan()</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_7">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>90</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>7</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_8">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>90</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>8</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_9">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>90</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>9</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="X_value">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>129</x>
+      <y>411</y>
+      <width>176</width>
+      <height>69</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string>QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="inputMask">
+     <string/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Answer">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>31</y>
+      <width>264</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+  qproperty-alignment: 'AlignVCenter | AlignRight';
+  border: 1px solid gray;
+}
+
+background-color : white;
+</string>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Equality_sign">
+    <property name="geometry">
+     <rect>
+      <x>631</x>
+      <y>30</y>
+      <width>16</width>
+      <height>42</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>=</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_func_Pi">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>267</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>π</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_0">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>267</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="Equation">
+    <property name="geometry">
+     <rect>
+      <x>39</x>
+      <y>30</y>
+      <width>531</width>
+      <height>42</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string>QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Label_y_max">
+    <property name="geometry">
+     <rect>
+      <x>658</x>
+      <y>444</y>
+      <width>81</width>
+      <height>42</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>y max =</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="Plot_settings_box">
+    <property name="geometry">
+     <rect>
+      <x>565</x>
+      <y>360</y>
+      <width>150</width>
+      <height>42</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>   Plot settings</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Label_x_min">
+    <property name="geometry">
+     <rect>
+      <x>348</x>
+      <y>404</y>
+      <width>81</width>
+      <height>42</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>x min =</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Label_y_min">
+    <property name="geometry">
+     <rect>
+      <x>658</x>
+      <y>404</y>
+      <width>81</width>
+      <height>42</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>y min =</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Label_x_max">
+    <property name="geometry">
+     <rect>
+      <x>348</x>
+      <y>444</y>
+      <width>81</width>
+      <height>42</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>x max =</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QCustomPlot" name="Plotter" native="true">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>519</y>
+      <width>884</width>
+      <height>525</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="X_min">
+    <property name="geometry">
+     <rect>
+      <x>438</x>
+      <y>410</y>
+      <width>176</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="decimals">
+     <number>2</number>
+    </property>
+    <property name="minimum">
+     <double>-1000000.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>1000000.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>0.500000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="X_max">
+    <property name="geometry">
+     <rect>
+      <x>438</x>
+      <y>450</y>
+      <width>176</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="decimals">
+     <number>2</number>
+    </property>
+    <property name="minimum">
+     <double>-1000000.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>1000000.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>0.500000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="Y_min">
+    <property name="geometry">
+     <rect>
+      <x>748</x>
+      <y>410</y>
+      <width>176</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="decimals">
+     <number>2</number>
+    </property>
+    <property name="minimum">
+     <double>-1000000.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>1000000.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>0.500000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QDoubleSpinBox" name="Y_max">
+    <property name="geometry">
+     <rect>
+      <x>748</x>
+      <y>450</y>
+      <width>176</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="decimals">
+     <number>2</number>
+    </property>
+    <property name="minimum">
+     <double>-1000000.000000000000000</double>
+    </property>
+    <property name="maximum">
+     <double>1000000.000000000000000</double>
+    </property>
+    <property name="singleStep">
+     <double>0.500000000000000</double>
+    </property>
+    <property name="value">
+     <double>0.000000000000000</double>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="X_count_box">
+    <property name="geometry">
+     <rect>
+      <x>126</x>
+      <y>360</y>
+      <width>91</width>
+      <height>42</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>X count</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_func_fx">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>408</y>
+      <width>84</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>x</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_delete">
+    <property name="geometry">
+     <rect>
+      <x>572</x>
+      <y>27</y>
+      <width>42</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>&lt;-</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Button_func_Pi_2">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>267</y>
+      <width>84</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>21</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  
+}
+</string>
+    </property>
+    <property name="text">
+     <string>π</string>
+    </property>
+   </widget>
+   <zorder>Background_theFlash</zorder>
+   <zorder>Button_func_sin</zorder>
+   <zorder>Button_func_cos</zorder>
+   <zorder>Button_func_acos</zorder>
+   <zorder>Button_func_asin</zorder>
+   <zorder>Button_func_atan</zorder>
+   <zorder>Button_func_ln</zorder>
+   <zorder>Button_func_log</zorder>
+   <zorder>Button_func_ceil</zorder>
+   <zorder>Button_1</zorder>
+   <zorder>Button_3</zorder>
+   <zorder>Button_6</zorder>
+   <zorder>Button_5</zorder>
+   <zorder>Button_2</zorder>
+   <zorder>Button_4</zorder>
+   <zorder>Button_AC</zorder>
+   <zorder>Button_dot</zorder>
+   <zorder>Button_oper_unar_plus</zorder>
+   <zorder>Button_oper_power</zorder>
+   <zorder>Button_oper_sqrt</zorder>
+   <zorder>Button_oper_multi</zorder>
+   <zorder>Button_oper_minus</zorder>
+   <zorder>Button_oper_unar_minus</zorder>
+   <zorder>Button_oper_close</zorder>
+   <zorder>Button_oper_count</zorder>
+   <zorder>Button_oper_plus</zorder>
+   <zorder>Button_oper_mod</zorder>
+   <zorder>Button_oper_open</zorder>
+   <zorder>Button_oper_divide</zorder>
+   <zorder>Button_func_eps</zorder>
+   <zorder>Button_func_tan</zorder>
+   <zorder>Button_7</zorder>
+   <zorder>Button_8</zorder>
+   <zorder>Button_9</zorder>
+   <zorder>X_value</zorder>
+   <zorder>Answer</zorder>
+   <zorder>Equality_sign</zorder>
+   <zorder>Button_func_Pi</zorder>
+   <zorder>Button_0</zorder>
+   <zorder>Equation</zorder>
+   <zorder>Label_y_max</zorder>
+   <zorder>Plot_settings_box</zorder>
+   <zorder>Label_x_min</zorder>
+   <zorder>Label_y_min</zorder>
+   <zorder>Label_x_max</zorder>
+   <zorder>Plotter</zorder>
+   <zorder>X_min</zorder>
+   <zorder>X_max</zorder>
+   <zorder>Y_min</zorder>
+   <zorder>Y_max</zorder>
+   <zorder>X_count_box</zorder>
+   <zorder>Button_func_fx</zorder>
+   <zorder>Button_delete</zorder>
+   <zorder>Button_func_Pi_2</zorder>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>qcustomplot/qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,917 @@
+/* Copyright 2023 valeryje
+ * 
+ * This file contains Original Code created by Alexander Alexanyan
+ * aka valeryje or Valery Jennette or Alex-A-Nyan or alale5.
+ * 
+ * The Original Code and all software developed in the process of
+ * participation on learning by experimental programming educational method.
+ * The whole methodology was developed and distributed by
+ * Autonomous non-profit organization «School 21» (ANO «School 21»). 
+ * 
+ * Redistribution and use of this file, its parts, or entire project
+ * are permitted by confirmation of its original creator.
+ */
+
+/* ==================================================================================================== */
+
+/* ----- LIBRARIES AND DEFINITIONS ----- */
+  #include "lib.h"
+
+/* ----- TESTS ----- */
+
+#test STARTER
+  printf("\n");
+
+
+
+#test ADDITION
+  char orig_eq00[MAX_LENGTH] = "06=";
+  char orig_eq01[MAX_LENGTH] = "1+1=";
+  char orig_eq02[MAX_LENGTH] = "2+1=";
+  char orig_eq03[MAX_LENGTH] = "2+90=";
+  char orig_eq04[MAX_LENGTH] = "24+90=";
+  char orig_eq05[MAX_LENGTH] = "2400+86=";
+  char orig_eq06[MAX_LENGTH] = "2400+86+14=";
+  char orig_eq07[MAX_LENGTH] = "2500+2400+86+14=";
+  char orig_eq08[MAX_LENGTH] = "37+450+13=";
+  char orig_eq09[MAX_LENGTH] = "123456789+876543211=";
+    char *result00 = smartcalc(orig_eq00, "");
+    char *result01 = smartcalc(orig_eq01, "");
+    char *result02 = smartcalc(orig_eq02, "");
+    char *result03 = smartcalc(orig_eq03, "");
+    char *result04 = smartcalc(orig_eq04, "");
+    char *result05 = smartcalc(orig_eq05, "");
+    char *result06 = smartcalc(orig_eq06, "");
+    char *result07 = smartcalc(orig_eq07, "");
+    char *result08 = smartcalc(orig_eq08, "");
+    char *result09 = smartcalc(orig_eq09, "");
+      ck_assert_str_eq(result00, "6");
+      ck_assert_str_eq(result01, "2");
+      ck_assert_str_eq(result02, "3");
+      ck_assert_str_eq(result03, "92");
+      ck_assert_str_eq(result04, "114");
+      ck_assert_str_eq(result05, "2486");
+      ck_assert_str_eq(result06, "2500");
+      ck_assert_str_eq(result07, "5000");
+      ck_assert_str_eq(result08, "500");
+      ck_assert_str_eq(result09, "1000000000");
+  printf("SUCCESSFULL %2d tests for 'ADDITION'\n", 10);
+
+#test SUBSTRACTION
+  char orig_eq00[MAX_LENGTH] = "0-0=";
+  char orig_eq01[MAX_LENGTH] = "1-1=";
+  char orig_eq02[MAX_LENGTH] = "2-1=";
+  char orig_eq03[MAX_LENGTH] = "2-90=";
+  char orig_eq04[MAX_LENGTH] = "45-90=";
+  char orig_eq05[MAX_LENGTH] = "100-86=";
+  char orig_eq06[MAX_LENGTH] = "2600-86-14=";
+  char orig_eq07[MAX_LENGTH] = "2500-2400-86-14=";
+  char orig_eq08[MAX_LENGTH] = "37-450+13=";
+  char orig_eq09[MAX_LENGTH] = "48+35-13-124-78+32=";
+    char *result00 = smartcalc(orig_eq00, "0");
+    char *result01 = smartcalc(orig_eq01, "0");
+    char *result02 = smartcalc(orig_eq02, "0");
+    char *result03 = smartcalc(orig_eq03, "0");
+    char *result04 = smartcalc(orig_eq04, "0");
+    char *result05 = smartcalc(orig_eq05, "0");
+    char *result06 = smartcalc(orig_eq06, "0");
+    char *result07 = smartcalc(orig_eq07, "0");
+    char *result08 = smartcalc(orig_eq08, "0");
+    char *result09 = smartcalc(orig_eq09, "0");
+      ck_assert_str_eq(result00, "0");
+      ck_assert_str_eq(result01, "0");
+      ck_assert_str_eq(result02, "1");
+      ck_assert_str_eq(result03, "-88");
+      ck_assert_str_eq(result04, "-45");
+      ck_assert_str_eq(result05, "14");
+      ck_assert_str_eq(result06, "2500");
+      ck_assert_str_eq(result07, "0");
+      ck_assert_str_eq(result08, "-400");
+      ck_assert_str_eq(result09, "-100");
+  printf("SUCCESSFULL %2d tests for 'SUBSTRACTION'\n", 10);
+
+#test MULTIPLICATION
+  char orig_eq00[MAX_LENGTH] = "0*0=";
+  char orig_eq01[MAX_LENGTH] = "1*0=";
+  char orig_eq02[MAX_LENGTH] = "1*3=";
+  char orig_eq03[MAX_LENGTH] = "5*2*100=";
+  char orig_eq04[MAX_LENGTH] = "50*5=";
+  char orig_eq05[MAX_LENGTH] = "3*6*9+38=";
+  char orig_eq06[MAX_LENGTH] = "2+3-5*1000=";
+  char orig_eq07[MAX_LENGTH] = "100+10*2*7-340=";
+  char orig_eq08[MAX_LENGTH] = "2*2*2-3*3+4*4+5=";
+  char orig_eq09[MAX_LENGTH] = "325*4-300*1*2=";
+    char *result00 = smartcalc(orig_eq00, "0");
+    char *result01 = smartcalc(orig_eq01, "0");
+    char *result02 = smartcalc(orig_eq02, "0");
+    char *result03 = smartcalc(orig_eq03, "0");
+    char *result04 = smartcalc(orig_eq04, "0");
+    char *result05 = smartcalc(orig_eq05, "0");
+    char *result06 = smartcalc(orig_eq06, "0");
+    char *result07 = smartcalc(orig_eq07, "0");
+    char *result08 = smartcalc(orig_eq08, "0");
+    char *result09 = smartcalc(orig_eq09, "0");
+      ck_assert_str_eq(result00, "0");
+      ck_assert_str_eq(result01, "0");
+      ck_assert_str_eq(result02, "3");
+      ck_assert_str_eq(result03, "1000");
+      ck_assert_str_eq(result04, "250");
+      ck_assert_str_eq(result05, "200");
+      ck_assert_str_eq(result06, "-4995");
+      ck_assert_str_eq(result07, "-100");
+      ck_assert_str_eq(result08, "20");
+      ck_assert_str_eq(result09, "700");
+  printf("SUCCESSFULL %2d tests for 'MULTIPLICATION'\n", 10);
+
+#test DIVISION
+  char orig_eq00[MAX_LENGTH] = "123/0=";
+  char orig_eq01[MAX_LENGTH] = "0/0=";
+  char orig_eq02[MAX_LENGTH] = "1/1=";
+  char orig_eq03[MAX_LENGTH] = "6/3=";
+  char orig_eq04[MAX_LENGTH] = "24/6/2/2=";
+  char orig_eq05[MAX_LENGTH] = "0/1/2/3/4/5=";
+  char orig_eq06[MAX_LENGTH] = "12/2/3*4/8=";
+  char orig_eq07[MAX_LENGTH] = "25*4/100+20=";
+  char orig_eq08[MAX_LENGTH] = "3+8/2-6=";
+  char orig_eq09[MAX_LENGTH] = "1+8/4*3/6*10/5*2=";
+    char *result00 = smartcalc(orig_eq00, "0");
+    char *result01 = smartcalc(orig_eq01, "0");
+    char *result02 = smartcalc(orig_eq02, "0");
+    char *result03 = smartcalc(orig_eq03, "0");
+    char *result04 = smartcalc(orig_eq04, "0");
+    char *result05 = smartcalc(orig_eq05, "0");
+    char *result06 = smartcalc(orig_eq06, "0");
+    char *result07 = smartcalc(orig_eq07, "0");
+    char *result08 = smartcalc(orig_eq08, "0");
+    char *result09 = smartcalc(orig_eq09, "0");
+      ck_assert_str_eq(result00, "inf");
+      ck_assert_str_eq(result01, "nan");
+      ck_assert_str_eq(result02, "1");
+      ck_assert_str_eq(result03, "2");
+      ck_assert_str_eq(result04, "1");
+      ck_assert_str_eq(result05, "0");
+      ck_assert_str_eq(result06, "1");
+      ck_assert_str_eq(result07, "21");
+      ck_assert_str_eq(result08, "1");
+      ck_assert_str_eq(result09, "5");
+  printf("SUCCESSFULL %2d tests for 'DIVISION'\n", 10);
+
+#test MODULUS
+  char orig_eq00[MAX_LENGTH] = "1mod1=";
+  char orig_eq01[MAX_LENGTH] = "34mod70=";
+  char orig_eq02[MAX_LENGTH] = "70mod34=";
+  char orig_eq03[MAX_LENGTH] = "10mod3*3=";
+  char orig_eq04[MAX_LENGTH] = "3*10mod3=";
+  char orig_eq05[MAX_LENGTH] = "1+10mod7*8=";
+  char orig_eq06[MAX_LENGTH] = "32mod6-4*2-4=";
+  char orig_eq07[MAX_LENGTH] = "1mod2mod3mod4mod5=";
+  char orig_eq08[MAX_LENGTH] = "10mod4mod3mod1=";
+  char orig_eq09[MAX_LENGTH] = "1+2-20/5mod3+8=";
+    char *result00 = smartcalc(orig_eq00, "0");
+    char *result01 = smartcalc(orig_eq01, "0");
+    char *result02 = smartcalc(orig_eq02, "0");
+    char *result03 = smartcalc(orig_eq03, "0");
+    char *result04 = smartcalc(orig_eq04, "0");
+    char *result05 = smartcalc(orig_eq05, "0");
+    char *result06 = smartcalc(orig_eq06, "0");
+    char *result07 = smartcalc(orig_eq07, "0");
+    char *result08 = smartcalc(orig_eq08, "0");
+    char *result09 = smartcalc(orig_eq09, "0");
+      ck_assert_str_eq(result00, "0");
+      ck_assert_str_eq(result01, "34");
+      ck_assert_str_eq(result02, "2");
+      ck_assert_str_eq(result03, "3");
+      ck_assert_str_eq(result04, "0");
+      ck_assert_str_eq(result05, "25");
+      ck_assert_str_eq(result06, "-10");
+      ck_assert_str_eq(result07, "1");
+      ck_assert_str_eq(result08, "0");
+      ck_assert_str_eq(result09, "10");
+  printf("SUCCESSFULL %2d tests for 'MODULUS'\n", 10);
+
+#test POWER
+  char orig_eq00[MAX_LENGTH] = "2^2=";
+  char orig_eq01[MAX_LENGTH] = "2^0=";
+  char orig_eq02[MAX_LENGTH] = "0^4=";
+  char orig_eq03[MAX_LENGTH] = "1^0=";
+  char orig_eq04[MAX_LENGTH] = "2^3^2=";
+  char orig_eq05[MAX_LENGTH] = "2^2+2^2=";
+  char orig_eq06[MAX_LENGTH] = "3^2-2^2=";
+  char orig_eq07[MAX_LENGTH] = "150*5+75^2-25^2-35^2-55^2=";
+  char orig_eq08[MAX_LENGTH] = "4^3^2^1=";
+  char orig_eq09[MAX_LENGTH] = "1^2^3^4=";
+    char *result00 = smartcalc(orig_eq00, "0");
+    char *result01 = smartcalc(orig_eq01, "0");
+    char *result02 = smartcalc(orig_eq02, "0");
+    char *result03 = smartcalc(orig_eq03, "0");
+    char *result04 = smartcalc(orig_eq04, "0");
+    char *result05 = smartcalc(orig_eq05, "0");
+    char *result06 = smartcalc(orig_eq06, "0");
+    char *result07 = smartcalc(orig_eq07, "0");
+    char *result08 = smartcalc(orig_eq08, "0");
+    char *result09 = smartcalc(orig_eq09, "0");
+      ck_assert_str_eq(result00, "4");
+      ck_assert_str_eq(result01, "1");
+      ck_assert_str_eq(result02, "0");
+      ck_assert_str_eq(result03, "1");
+      ck_assert_str_eq(result04, "512");
+      ck_assert_str_eq(result05, "8");
+      ck_assert_str_eq(result06, "5");
+      ck_assert_str_eq(result07, "1500");
+      ck_assert_str_eq(result08, "262144");
+      ck_assert_str_eq(result09, "1");
+  printf("SUCCESSFULL %2d tests for 'POWER'\n", 10);
+
+#test UNARY_PLUS
+  char orig_eq00[MAX_LENGTH] = "+1=";
+  char orig_eq01[MAX_LENGTH] = "+2=";
+  char orig_eq02[MAX_LENGTH] = "+2+4=";
+  char orig_eq03[MAX_LENGTH] = "+4+(+4)=";
+  char orig_eq04[MAX_LENGTH] = "3mod(+3)=";
+  char orig_eq05[MAX_LENGTH] = "+3mod(+3)=";
+  char orig_eq06[MAX_LENGTH] = "3mod(+3)+(+5)=";
+  char orig_eq07[MAX_LENGTH] = "1+(+2)+(+3+(+4))=";
+  char orig_eq08[MAX_LENGTH] = "(+5)=";
+  char orig_eq09[MAX_LENGTH] = "+45234+(23*543)+(+34)=";
+    char *result00 = smartcalc(orig_eq00, "0");
+    char *result01 = smartcalc(orig_eq01, "0");
+    char *result02 = smartcalc(orig_eq02, "0");
+    char *result03 = smartcalc(orig_eq03, "0");
+    char *result04 = smartcalc(orig_eq04, "0");
+    char *result05 = smartcalc(orig_eq05, "0");
+    char *result06 = smartcalc(orig_eq06, "0");
+    char *result07 = smartcalc(orig_eq07, "0");
+    char *result08 = smartcalc(orig_eq08, "0");
+    char *result09 = smartcalc(orig_eq09, "0");
+      ck_assert_str_eq(result00, "1");
+      ck_assert_str_eq(result01, "2");
+      ck_assert_str_eq(result02, "6");
+      ck_assert_str_eq(result03, "8");
+      ck_assert_str_eq(result04, "0");
+      ck_assert_str_eq(result05, "0");
+      ck_assert_str_eq(result06, "5");
+      ck_assert_str_eq(result07, "10");
+      ck_assert_str_eq(result08, "5");
+      ck_assert_str_eq(result09, "57757");
+  printf("SUCCESSFULL %2d tests for 'UNARY_PLUS'\n", 10);
+
+#test UNARY_MUNIS
+  char orig_eq00[MAX_LENGTH] = "-1=";
+  char orig_eq01[MAX_LENGTH] = "(-2)=";
+  char orig_eq02[MAX_LENGTH] = "-2-4=";
+  char orig_eq03[MAX_LENGTH] = "-5+(+4)=";
+  char orig_eq04[MAX_LENGTH] = "-5+(-4)=";
+  char orig_eq05[MAX_LENGTH] = "+5+(+4)=";
+  char orig_eq06[MAX_LENGTH] = "+5+(-4)=";
+  char orig_eq07[MAX_LENGTH] = "-2mod(-4)=";
+  char orig_eq08[MAX_LENGTH] = "-1+(-2)+(-3+(-4))=";
+  char orig_eq09[MAX_LENGTH] = "-1-(-2)+(-3-(-4))=";
+    char *result00 = smartcalc(orig_eq00, "0");
+    char *result01 = smartcalc(orig_eq01, "0");
+    char *result02 = smartcalc(orig_eq02, "0");
+    char *result03 = smartcalc(orig_eq03, "0");
+    char *result04 = smartcalc(orig_eq04, "0");
+    char *result05 = smartcalc(orig_eq05, "0");
+    char *result06 = smartcalc(orig_eq06, "0");
+    char *result07 = smartcalc(orig_eq07, "0");
+    char *result08 = smartcalc(orig_eq08, "0");
+    char *result09 = smartcalc(orig_eq09, "0");
+      ck_assert_str_eq(result00, "-1");
+      ck_assert_str_eq(result01, "-2");
+      ck_assert_str_eq(result02, "-6");
+      ck_assert_str_eq(result03, "-1");
+      ck_assert_str_eq(result04, "-9");
+      ck_assert_str_eq(result05, "9");
+      ck_assert_str_eq(result06, "1");
+      ck_assert_str_eq(result07, "-2");
+      ck_assert_str_eq(result08, "-10");
+      ck_assert_str_eq(result09, "2");
+  printf("SUCCESSFULL %2d tests for 'UNARY_MUNIS'\n", 10);
+
+
+
+#test DECIMAL_NUMBERS
+  char orig_eq00[MAX_LENGTH] = "1.=";
+  char orig_eq01[MAX_LENGTH] = "1.2+2.1=";
+  char orig_eq02[MAX_LENGTH] = "4.+5.99999999=";
+  char orig_eq03[MAX_LENGTH] = "0.9999999=";
+  char orig_eq04[MAX_LENGTH] = "0.99999999=";
+  char orig_eq05[MAX_LENGTH] = "0.9999999-1=";
+  char orig_eq06[MAX_LENGTH] = "0.2*5=";
+  char orig_eq07[MAX_LENGTH] = "0.2+0.2+0.2+0.2+0.2=";
+  char orig_eq08[MAX_LENGTH] = "0.00000001*4.9999999=";
+  char orig_eq09[MAX_LENGTH] = "1.+2=";
+    char *result00 = smartcalc(orig_eq00, "");
+    char *result01 = smartcalc(orig_eq01, "");
+    char *result02 = smartcalc(orig_eq02, "");
+    char *result03 = smartcalc(orig_eq03, "");
+    char *result04 = smartcalc(orig_eq04, "");
+    char *result05 = smartcalc(orig_eq05, "");
+    char *result06 = smartcalc(orig_eq06, "");
+    char *result07 = smartcalc(orig_eq07, "");
+    char *result08 = smartcalc(orig_eq08, "");
+    char *result09 = smartcalc(orig_eq09, "");
+      ck_assert_str_eq(result00, "1");
+      ck_assert_str_eq(result01, "3.3000000");
+      ck_assert_str_eq(result02, "10.0000000");
+      ck_assert_str_eq(result03, "0.9999999");
+      ck_assert_str_eq(result04, "1.0000000");
+      ck_assert_str_eq(result05, "-0.0000001");
+      ck_assert_str_eq(result06, "1");
+      ck_assert_str_eq(result07, "1");
+      ck_assert_str_eq(result08, "0.0000000");
+      ck_assert_str_eq(result09, "3");
+  printf("SUCCESSFULL %2d tests for 'DECIMAL_NUMBERS'\n", 10);
+
+#test CORRECT_BRACKETS
+  char orig_eq00[MAX_LENGTH] = "()=";
+  char orig_eq01[MAX_LENGTH] = "(1)=";
+  char orig_eq02[MAX_LENGTH] = "(1+2)=";
+  char orig_eq03[MAX_LENGTH] = "5*(4-2)=";
+  char orig_eq04[MAX_LENGTH] = "(2-2)*(3+3)=";
+  char orig_eq05[MAX_LENGTH] = "2*(3-(4-5))=";
+  char orig_eq06[MAX_LENGTH] = "10-((5*3)-5)*2=";
+  char orig_eq07[MAX_LENGTH] = "(10/2)+5=";
+  char orig_eq08[MAX_LENGTH] = "(1000-999)*(35/5)+(2.5*4)*(3)/(20/2)=";
+  char orig_eq09[MAX_LENGTH] = "(4871220/5/3/((1+1)*2)+(1*2))/9/3-7-2500=";
+    char *result00 = smartcalc(orig_eq00, "");
+    char *result01 = smartcalc(orig_eq01, "");
+    char *result02 = smartcalc(orig_eq02, "");
+    char *result03 = smartcalc(orig_eq03, "");
+    char *result04 = smartcalc(orig_eq04, "");
+    char *result05 = smartcalc(orig_eq05, "");
+    char *result06 = smartcalc(orig_eq06, "");
+    char *result07 = smartcalc(orig_eq07, "");
+    char *result08 = smartcalc(orig_eq08, "");
+    char *result09 = smartcalc(orig_eq09, "");
+      ck_assert_str_eq(result00, "0");
+      ck_assert_str_eq(result01, "1");
+      ck_assert_str_eq(result02, "3");
+      ck_assert_str_eq(result03, "10");
+      ck_assert_str_eq(result04, "0");
+      ck_assert_str_eq(result05, "8");
+      ck_assert_str_eq(result06, "-10");
+      ck_assert_str_eq(result07, "10");
+      ck_assert_str_eq(result08, "10");
+      ck_assert_str_eq(result09, "500");
+  printf("SUCCESSFULL %2d tests for 'CORRECT_BRACKETS'\n", 10);
+
+
+
+#test SIN
+  char orig_eq00[MAX_LENGTH] = "sin(0)=";
+  char orig_eq01[MAX_LENGTH] = "sin(5/5)=";
+  char orig_eq02[MAX_LENGTH] = "sin((2-3)*0)=";
+  char orig_eq03[MAX_LENGTH] = "sin(sin(sin(0)))=";
+  char orig_eq04[MAX_LENGTH] = "sin(1)+sin(1)+sin(1)+sin(1)=";
+  char orig_eq05[MAX_LENGTH] = "sin(4^4)=";
+  char orig_eq06[MAX_LENGTH] = "sin(1000)=";
+  char orig_eq07[MAX_LENGTH] = "sin(-4)=";
+  char orig_eq08[MAX_LENGTH] = "-sin(+1000)=";
+  char orig_eq09[MAX_LENGTH] = "-1*(-sin(-1000))=";
+    char *result00 = smartcalc(orig_eq00, "");
+    char *result01 = smartcalc(orig_eq01, "");
+    char *result02 = smartcalc(orig_eq02, "");
+    char *result03 = smartcalc(orig_eq03, "");
+    char *result04 = smartcalc(orig_eq04, "");
+    char *result05 = smartcalc(orig_eq05, "");
+    char *result06 = smartcalc(orig_eq06, "");
+    char *result07 = smartcalc(orig_eq07, "");
+    char *result08 = smartcalc(orig_eq08, "");
+    char *result09 = smartcalc(orig_eq09, "");
+      ck_assert_str_eq(result00, "0");
+      ck_assert_str_eq(result01, "0.8414710");
+      ck_assert_str_eq(result02, "0");
+      ck_assert_str_eq(result03, "0");
+      ck_assert_str_eq(result04, "3.3658839");
+      ck_assert_str_eq(result05, "-0.9992080");
+      ck_assert_str_eq(result06, "0.8268795");
+      ck_assert_str_eq(result07, "0.7568025");
+      ck_assert_str_eq(result08, "-0.8268795");
+      ck_assert_str_eq(result09, "-0.8268795");
+  printf("SUCCESSFULL %2d tests for 'SIN'\n", 10);
+
+#test COS
+  char orig_eq00[MAX_LENGTH] = "cos(0)=";
+  char orig_eq01[MAX_LENGTH] = "cos(sin(0))=";
+  char orig_eq02[MAX_LENGTH] = "sin(cos(sin(0)))=";
+  char orig_eq03[MAX_LENGTH] = "cos(0)-cos(0)*2=";
+  char orig_eq04[MAX_LENGTH] = "(cos(0)-cos(0))*2=";
+  char orig_eq05[MAX_LENGTH] = "1+4/(cos(0)*2)=";
+  char orig_eq06[MAX_LENGTH] = "1+4/cos(0)*2=";
+  char orig_eq07[MAX_LENGTH] = "(1+4/cos(0))*2=";
+  char orig_eq08[MAX_LENGTH] = "cos(cos(cos(0)))=";
+  char orig_eq09[MAX_LENGTH] = "-cos(-cos(-cos(0)))=";
+    char *result00 = smartcalc(orig_eq00, "");
+    char *result01 = smartcalc(orig_eq01, "");
+    char *result02 = smartcalc(orig_eq02, "");
+    char *result03 = smartcalc(orig_eq03, "");
+    char *result04 = smartcalc(orig_eq04, "");
+    char *result05 = smartcalc(orig_eq05, "");
+    char *result06 = smartcalc(orig_eq06, "");
+    char *result07 = smartcalc(orig_eq07, "");
+    char *result08 = smartcalc(orig_eq08, "");
+    char *result09 = smartcalc(orig_eq09, "");
+      ck_assert_str_eq(result00, "1");
+      ck_assert_str_eq(result01, "1");
+      ck_assert_str_eq(result02, "0.8414710");
+      ck_assert_str_eq(result03, "-1");
+      ck_assert_str_eq(result04, "0");
+      ck_assert_str_eq(result05, "3");
+      ck_assert_str_eq(result06, "9");
+      ck_assert_str_eq(result07, "10");
+      ck_assert_str_eq(result08, "0.8575532");
+      ck_assert_str_eq(result09, "-0.8575532");
+  printf("SUCCESSFULL %2d tests for 'COS'\n", 10);
+
+#test TAN
+  char orig_eq00[MAX_LENGTH] = "tan(0)=";
+  char orig_eq01[MAX_LENGTH] = "tan(1)=";
+  char orig_eq02[MAX_LENGTH] = "tan(3.1416)=";
+  char orig_eq03[MAX_LENGTH] = "tan(cos(0))=";
+  char orig_eq04[MAX_LENGTH] = "tan(cos(0)+cos(0))=";
+  char orig_eq05[MAX_LENGTH] = "tan(cos(0))+cos(0)=";
+  char orig_eq06[MAX_LENGTH] = "1+tan(cos(0))*cos(0)=";
+  char orig_eq07[MAX_LENGTH] = "(1+tan(cos(0)))+sin(0)/2=";
+  char orig_eq08[MAX_LENGTH] = "-tan(cos(0))mod(-35)=";
+  char orig_eq09[MAX_LENGTH] = "4-(-(+cos(sin(tan(423)))))=";
+    char *result00 = smartcalc(orig_eq00, "");
+    char *result01 = smartcalc(orig_eq01, "");
+    char *result02 = smartcalc(orig_eq02, "");
+    char *result03 = smartcalc(orig_eq03, "");
+    char *result04 = smartcalc(orig_eq04, "");
+    char *result05 = smartcalc(orig_eq05, "");
+    char *result06 = smartcalc(orig_eq06, "");
+    char *result07 = smartcalc(orig_eq07, "");
+    char *result08 = smartcalc(orig_eq08, "");
+    char *result09 = smartcalc(orig_eq09, "");
+      ck_assert_str_eq(result00, "0");
+      ck_assert_str_eq(result01, "1.5574077");
+      ck_assert_str_eq(result02, "0.0000073");
+      ck_assert_str_eq(result03, "1.5574077");
+      ck_assert_str_eq(result04, "-2.1850399");
+      ck_assert_str_eq(result05, "2.5574077");
+      ck_assert_str_eq(result06, "2.5574077");
+      ck_assert_str_eq(result07, "2.5574077");
+      ck_assert_str_eq(result08, "-1.5574077");
+      ck_assert_str_eq(result09, "4.6278861");
+  printf("SUCCESSFULL %2d tests for 'TAN'\n", 10);
+
+#test ASIN
+  char orig_eq00[MAX_LENGTH] = "asin(0)=";
+  char orig_eq01[MAX_LENGTH] = "asin(0.5)=";
+  char orig_eq02[MAX_LENGTH] = "asin(0.9)=";
+  char orig_eq03[MAX_LENGTH] = "asin(0.999999)=";
+  char orig_eq04[MAX_LENGTH] = "asin(0.9999999)=";
+  char orig_eq05[MAX_LENGTH] = "asin(0.9999999999)=";
+  char orig_eq06[MAX_LENGTH] = "asin(0.999999999999999999999)=";
+  char orig_eq07[MAX_LENGTH] = "asin(1)=";
+  char orig_eq08[MAX_LENGTH] = "asin(1.00000000000001)=";
+  char orig_eq09[MAX_LENGTH] = "asin(-1.00000000000001)=";
+    char *result00 = smartcalc(orig_eq00, "");
+    char *result01 = smartcalc(orig_eq01, "");
+    char *result02 = smartcalc(orig_eq02, "");
+    char *result03 = smartcalc(orig_eq03, "");
+    char *result04 = smartcalc(orig_eq04, "");
+    char *result05 = smartcalc(orig_eq05, "");
+    char *result06 = smartcalc(orig_eq06, "");
+    char *result07 = smartcalc(orig_eq07, "");
+    char *result08 = smartcalc(orig_eq08, "");
+    char *result09 = smartcalc(orig_eq09, "");
+      ck_assert_str_eq(result00, "0");
+      ck_assert_str_eq(result01, "0.5235988");
+      ck_assert_str_eq(result02, "1.1197695");
+      ck_assert_str_eq(result03, "1.5693821");
+      ck_assert_str_eq(result04, "1.5703491");
+      ck_assert_str_eq(result05, "1.5707822");
+      ck_assert_str_eq(result06, "1.5707963");
+      ck_assert_str_eq(result07, "1.5707963");
+      ck_assert_str_eq(result08, "nan");
+      ck_assert_str_eq(result09, "nan");
+  printf("SUCCESSFULL %2d tests for 'ASIN'\n", 10);
+
+#test ACOS
+  char orig_eq00[MAX_LENGTH] = "acos(0)=";
+  char orig_eq01[MAX_LENGTH] = "acos(0.5)=";
+  char orig_eq02[MAX_LENGTH] = "acos(0.9)=";
+  char orig_eq03[MAX_LENGTH] = "acos(0.999999)=";
+  char orig_eq04[MAX_LENGTH] = "acos(0.9999999)=";
+  char orig_eq05[MAX_LENGTH] = "acos(0.9999999999)=";
+  char orig_eq06[MAX_LENGTH] = "acos(0.999999999999999999999)=";
+  char orig_eq07[MAX_LENGTH] = "acos(1)=";
+  char orig_eq08[MAX_LENGTH] = "acos(1.00000000000001)=";
+  char orig_eq09[MAX_LENGTH] = "acos(-1.00000000000001)=";
+    char *result00 = smartcalc(orig_eq00, "");
+    char *result01 = smartcalc(orig_eq01, "");
+    char *result02 = smartcalc(orig_eq02, "");
+    char *result03 = smartcalc(orig_eq03, "");
+    char *result04 = smartcalc(orig_eq04, "");
+    char *result05 = smartcalc(orig_eq05, "");
+    char *result06 = smartcalc(orig_eq06, "");
+    char *result07 = smartcalc(orig_eq07, "");
+    char *result08 = smartcalc(orig_eq08, "");
+    char *result09 = smartcalc(orig_eq09, "");
+      ck_assert_str_eq(result00, "1.5707963");
+      ck_assert_str_eq(result01, "1.0471976");
+      ck_assert_str_eq(result02, "0.4510268");
+      ck_assert_str_eq(result03, "0.0014142");
+      ck_assert_str_eq(result04, "0.0004472");
+      ck_assert_str_eq(result05, "0.0000141");
+      ck_assert_str_eq(result06, "0");
+      ck_assert_str_eq(result07, "0");
+      ck_assert_str_eq(result08, "nan");
+      ck_assert_str_eq(result09, "nan");
+  printf("SUCCESSFULL %2d tests for 'ACOS'\n", 10);
+
+#test ATAN
+  char orig_eq00[MAX_LENGTH] = "atan(0)=";
+  char orig_eq01[MAX_LENGTH] = "atan(1000)=";
+  char orig_eq02[MAX_LENGTH] = "atan(10)=";
+  char orig_eq03[MAX_LENGTH] = "atan(5)=";
+  char orig_eq04[MAX_LENGTH] = "atan(0.2)=";
+  char orig_eq05[MAX_LENGTH] = "atan(34-50)=";
+  char orig_eq06[MAX_LENGTH] = "-atan(+432)=";
+  char orig_eq07[MAX_LENGTH] = "atan(atan(0))=";
+  char orig_eq08[MAX_LENGTH] = "-atan(45)=";
+  char orig_eq09[MAX_LENGTH] = "atan(-500)=";
+    char *result00 = smartcalc(orig_eq00, "");
+    char *result01 = smartcalc(orig_eq01, "");
+    char *result02 = smartcalc(orig_eq02, "");
+    char *result03 = smartcalc(orig_eq03, "");
+    char *result04 = smartcalc(orig_eq04, "");
+    char *result05 = smartcalc(orig_eq05, "");
+    char *result06 = smartcalc(orig_eq06, "");
+    char *result07 = smartcalc(orig_eq07, "");
+    char *result08 = smartcalc(orig_eq08, "");
+    char *result09 = smartcalc(orig_eq09, "");
+      ck_assert_str_eq(result00, "0");
+      ck_assert_str_eq(result01, "1.5697963");
+      ck_assert_str_eq(result02, "1.4711277");
+      ck_assert_str_eq(result03, "1.3734008");
+      ck_assert_str_eq(result04, "0.1973956");
+      ck_assert_str_eq(result05, "-1.5083775");
+      ck_assert_str_eq(result06, "-1.5684815");
+      ck_assert_str_eq(result07, "0");
+      ck_assert_str_eq(result08, "-1.5485778");
+      ck_assert_str_eq(result09, "-1.5687963");
+  printf("SUCCESSFULL %2d tests for 'ATAN'\n", 10);
+
+#test SQRT
+  char orig_eq00[MAX_LENGTH] = "sqrt(0)=";
+  char orig_eq01[MAX_LENGTH] = "sqrt(1)=";
+  char orig_eq02[MAX_LENGTH] = "sqrt(4)=";
+  char orig_eq03[MAX_LENGTH] = "sqrt(sqrt(16))=";
+  char orig_eq04[MAX_LENGTH] = "sqrt(6.25)=";
+  char orig_eq05[MAX_LENGTH] = "sqrt(6.2)=";
+  char orig_eq06[MAX_LENGTH] = "sqrt(4+5)=";
+  char orig_eq07[MAX_LENGTH] = "3^sqrt(4)=";
+  char orig_eq08[MAX_LENGTH] = "sqrt(2^4)=";
+  char orig_eq09[MAX_LENGTH] = "sqrt(2-3)=";
+    char *result00 = smartcalc(orig_eq00, "");
+    char *result01 = smartcalc(orig_eq01, "");
+    char *result02 = smartcalc(orig_eq02, "");
+    char *result03 = smartcalc(orig_eq03, "");
+    char *result04 = smartcalc(orig_eq04, "");
+    char *result05 = smartcalc(orig_eq05, "");
+    char *result06 = smartcalc(orig_eq06, "");
+    char *result07 = smartcalc(orig_eq07, "");
+    char *result08 = smartcalc(orig_eq08, "");
+    char *result09 = smartcalc(orig_eq09, "");
+      ck_assert_str_eq(result00, "0");
+      ck_assert_str_eq(result01, "1");
+      ck_assert_str_eq(result02, "2");
+      ck_assert_str_eq(result03, "2");
+      ck_assert_str_eq(result04, "2.5000000");
+      ck_assert_str_eq(result05, "2.4899799");
+      ck_assert_str_eq(result06, "3");
+      ck_assert_str_eq(result07, "9");
+      ck_assert_str_eq(result08, "4");
+      ck_assert_str_eq(result09, "nan");
+  printf("SUCCESSFULL %2d tests for 'SQRT'\n", 10);
+
+#test LOG
+  char orig_eq00[MAX_LENGTH] = "log(0)=";
+  char orig_eq01[MAX_LENGTH] = "log(1)=";
+  char orig_eq02[MAX_LENGTH] = "log(2)=";
+  char orig_eq03[MAX_LENGTH] = "log(10)=";
+  char orig_eq04[MAX_LENGTH] = "log(1000)=";
+  char orig_eq05[MAX_LENGTH] = "log(1000000)=";
+  char orig_eq06[MAX_LENGTH] = "log(0.001)=";
+  char orig_eq07[MAX_LENGTH] = "log(0.000009)=";
+  char orig_eq08[MAX_LENGTH] = "log(1-2)=";
+  char orig_eq09[MAX_LENGTH] = "log(1000-100000)=";
+    char *result00 = smartcalc(orig_eq00, "");
+    char *result01 = smartcalc(orig_eq01, "");
+    char *result02 = smartcalc(orig_eq02, "");
+    char *result03 = smartcalc(orig_eq03, "");
+    char *result04 = smartcalc(orig_eq04, "");
+    char *result05 = smartcalc(orig_eq05, "");
+    char *result06 = smartcalc(orig_eq06, "");
+    char *result07 = smartcalc(orig_eq07, "");
+    char *result08 = smartcalc(orig_eq08, "");
+    char *result09 = smartcalc(orig_eq09, "");
+      ck_assert_str_eq(result00, "-inf");
+      ck_assert_str_eq(result01, "0");
+      ck_assert_str_eq(result02, "0.3010300");
+      ck_assert_str_eq(result03, "1");
+      ck_assert_str_eq(result04, "3");
+      ck_assert_str_eq(result05, "6");
+      ck_assert_str_eq(result06, "-3");
+      ck_assert_str_eq(result07, "-5.0457575");
+      ck_assert_str_eq(result08, "nan");
+      ck_assert_str_eq(result09, "nan");
+  printf("SUCCESSFULL %2d tests for 'LOG'\n", 10);
+
+#test LN
+  char orig_eq00[MAX_LENGTH] = "ln(0)=";
+  char orig_eq01[MAX_LENGTH] = "ln(1)=";
+  char orig_eq02[MAX_LENGTH] = "ln(2)=";
+  char orig_eq03[MAX_LENGTH] = "ln(10)=";
+  char orig_eq04[MAX_LENGTH] = "ln(1000)=";
+  char orig_eq05[MAX_LENGTH] = "ln(1000000)=";
+  char orig_eq06[MAX_LENGTH] = "ln(0.001)=";
+  char orig_eq07[MAX_LENGTH] = "ln(0.000009)=";
+  char orig_eq08[MAX_LENGTH] = "ln(1-2)=";
+  char orig_eq09[MAX_LENGTH] = "ln(1000-100000)=";
+    char *result00 = smartcalc(orig_eq00, "");
+    char *result01 = smartcalc(orig_eq01, "");
+    char *result02 = smartcalc(orig_eq02, "");
+    char *result03 = smartcalc(orig_eq03, "");
+    char *result04 = smartcalc(orig_eq04, "");
+    char *result05 = smartcalc(orig_eq05, "");
+    char *result06 = smartcalc(orig_eq06, "");
+    char *result07 = smartcalc(orig_eq07, "");
+    char *result08 = smartcalc(orig_eq08, "");
+    char *result09 = smartcalc(orig_eq09, "");
+      ck_assert_str_eq(result00, "-inf");
+      ck_assert_str_eq(result01, "0");
+      ck_assert_str_eq(result02, "0.6931472");
+      ck_assert_str_eq(result03, "2.3025851");
+      ck_assert_str_eq(result04, "6.9077553");
+      ck_assert_str_eq(result05, "13.8155106");
+      ck_assert_str_eq(result06, "-6.9077553");
+      ck_assert_str_eq(result07, "-11.6182860");
+      ck_assert_str_eq(result08, "nan");
+      ck_assert_str_eq(result09, "nan");
+  printf("SUCCESSFULL %2d tests for 'LN'\n", 10);
+
+#test CEIL
+  char orig_eq00[MAX_LENGTH] = "ceil(0)=";
+  char orig_eq01[MAX_LENGTH] = "ceil(1)=";
+  char orig_eq02[MAX_LENGTH] = "ceil(10.)=";
+  char orig_eq03[MAX_LENGTH] = "ceil(-10.)=";
+  char orig_eq04[MAX_LENGTH] = "ceil(10.1)=";
+  char orig_eq05[MAX_LENGTH] = "ceil(-10.1)=";
+  char orig_eq06[MAX_LENGTH] = "ceil(10.9)=";
+  char orig_eq07[MAX_LENGTH] = "ceil(-10.9)=";
+  char orig_eq08[MAX_LENGTH] = "ceil(0./0.)=";
+  char orig_eq09[MAX_LENGTH] = "ceil(-1./0.)=";
+    char *result00 = smartcalc(orig_eq00, "");
+    char *result01 = smartcalc(orig_eq01, "");
+    char *result02 = smartcalc(orig_eq02, "");
+    char *result03 = smartcalc(orig_eq03, "");
+    char *result04 = smartcalc(orig_eq04, "");
+    char *result05 = smartcalc(orig_eq05, "");
+    char *result06 = smartcalc(orig_eq06, "");
+    char *result07 = smartcalc(orig_eq07, "");
+    char *result08 = smartcalc(orig_eq08, "");
+    char *result09 = smartcalc(orig_eq09, "");
+      ck_assert_str_eq(result00, "0");
+      ck_assert_str_eq(result01, "1");
+      ck_assert_str_eq(result02, "10");
+      ck_assert_str_eq(result03, "-10");
+      ck_assert_str_eq(result04, "11");
+      ck_assert_str_eq(result05, "-10");
+      ck_assert_str_eq(result06, "11");
+      ck_assert_str_eq(result07, "-10");
+      ck_assert_str_eq(result08, "nan");
+      ck_assert_str_eq(result09, "-inf");
+  printf("SUCCESSFULL %2d tests for 'CEIL'\n", 10);
+
+#test X_TEST
+  char orig_eq00[MAX_LENGTH] = "x=";
+  char orig_eq01[MAX_LENGTH] = "x=";
+  char orig_eq02[MAX_LENGTH] = "x=";
+  char orig_eq03[MAX_LENGTH] = "x+1=";
+  char orig_eq04[MAX_LENGTH] = "x+1=";
+  char orig_eq05[MAX_LENGTH] = "x+1=";
+  char orig_eq06[MAX_LENGTH] = "x*x=";
+  char orig_eq07[MAX_LENGTH] = "x*x=";
+  char orig_eq08[MAX_LENGTH] = "x*x=";
+  char orig_eq09[MAX_LENGTH] = "1+(x/3-5)=";
+  char orig_eq10[MAX_LENGTH] = "1+(x/3-5)=";
+  char orig_eq11[MAX_LENGTH] = "1+(x/3-5)=";
+  char orig_eq12[MAX_LENGTH] = "x+3*x-25/x=";
+  char orig_eq13[MAX_LENGTH] = "x+3*x-25/x=";
+  char orig_eq14[MAX_LENGTH] = "x+3*x-25/x=";
+  char orig_eq15[MAX_LENGTH] = "x+3*x-25/x=";
+  char orig_eq16[MAX_LENGTH] = "x+3*x-25/x=";
+    char *result00 = smartcalc(orig_eq00, "");
+    char *result01 = smartcalc(orig_eq01, "1");
+    char *result02 = smartcalc(orig_eq02, "4540");
+    char *result03 = smartcalc(orig_eq03, "74-6263");
+    char *result04 = smartcalc(orig_eq04, "1");
+    char *result05 = smartcalc(orig_eq05, "4540");
+    char *result06 = smartcalc(orig_eq06, "74-6263");
+    char *result07 = smartcalc(orig_eq07, "1");
+    char *result08 = smartcalc(orig_eq08, "4540");
+    char *result09 = smartcalc(orig_eq09, "74-6263");
+    char *result10 = smartcalc(orig_eq10, "1");
+    char *result11 = smartcalc(orig_eq11, "4540");
+    char *result12 = smartcalc(orig_eq12, "74-6263");
+    char *result13 = smartcalc(orig_eq13, "1");
+    char *result14 = smartcalc(orig_eq14, "4540");
+    char *result15 = smartcalc(orig_eq13, "+1");
+    char *result16 = smartcalc(orig_eq14, "-4540");
+      ck_assert_str_eq(result00, "EMPTY X-NUMBER");
+      ck_assert_str_eq(result01, "1");
+      ck_assert_str_eq(result02, "4540");
+      ck_assert_str_eq(result03, "INCORRECT X-NUMBER");
+      ck_assert_str_eq(result04, "2");
+      ck_assert_str_eq(result05, "4541");
+      ck_assert_str_eq(result06, "INCORRECT X-NUMBER");
+      ck_assert_str_eq(result07, "1");
+      ck_assert_str_eq(result08, "20611600");
+      ck_assert_str_eq(result09, "INCORRECT X-NUMBER");
+      ck_assert_str_eq(result10, "-3.6666667");
+      ck_assert_str_eq(result11, "1509.3333333");
+      ck_assert_str_eq(result12, "INCORRECT X-NUMBER");
+      ck_assert_str_eq(result13, "-21");
+      ck_assert_str_eq(result14, "18159.9944934");
+      ck_assert_str_eq(result15, "-21");
+      ck_assert_str_eq(result16, "-18159.9944934");
+  printf("SUCCESSFULL %2d tests for 'X_TEST'\n", 17);
+
+#test TYPO_ERROR
+  char orig_eq00[MAX_LENGTH] = "lig(0)=";
+  char orig_eq01[MAX_LENGTH] = "son(0)=";
+  char orig_eq02[MAX_LENGTH] = "asls(2)=";
+    char *result00 = smartcalc(orig_eq00, "");
+    char *result01 = smartcalc(orig_eq01, "");
+    char *result02 = smartcalc(orig_eq02, "");
+      ck_assert_str_eq(result00, "TYPO IN FUNCTION");
+      ck_assert_str_eq(result01, "TYPO IN FUNCTION");
+      ck_assert_str_eq(result02, "TYPO IN FUNCTION");
+  printf("SUCCESSFULL %2d tests for 'TYPO'\n", 3);
+
+#test FORBIDDEN_ERROR
+  char orig_eq00[MAX_LENGTH] = "w=";
+  char orig_eq01[MAX_LENGTH] = "swn(2)=";
+  char orig_eq02[MAX_LENGTH] = "j*3=";
+  char orig_eq03[MAX_LENGTH] = "___=";
+  char orig_eq04[MAX_LENGTH] = "sin(1)_sin(1)=";
+  char orig_eq05[MAX_LENGTH] = "1&2=";
+  char orig_eq06[MAX_LENGTH] = "#####=";
+  char orig_eq07[MAX_LENGTH] = "?!=";
+  char orig_eq08[MAX_LENGTH] = "@=";
+  char orig_eq09[MAX_LENGTH] = "$=";
+    char *result00 = smartcalc(orig_eq00, "");
+    char *result01 = smartcalc(orig_eq01, "");
+    char *result02 = smartcalc(orig_eq02, "");
+    char *result03 = smartcalc(orig_eq03, "");
+    char *result04 = smartcalc(orig_eq04, "");
+    char *result05 = smartcalc(orig_eq05, "");
+    char *result06 = smartcalc(orig_eq06, "");
+    char *result07 = smartcalc(orig_eq07, "");
+    char *result08 = smartcalc(orig_eq08, "");
+    char *result09 = smartcalc(orig_eq09, "");
+      ck_assert_str_eq(result00, "FORBIDDEN SYMBOLS");
+      ck_assert_str_eq(result01, "FORBIDDEN SYMBOLS");
+      ck_assert_str_eq(result02, "FORBIDDEN SYMBOLS");
+      ck_assert_str_eq(result03, "FORBIDDEN SYMBOLS");
+      ck_assert_str_eq(result04, "FORBIDDEN SYMBOLS");
+      ck_assert_str_eq(result05, "FORBIDDEN SYMBOLS");
+      ck_assert_str_eq(result06, "FORBIDDEN SYMBOLS");
+      ck_assert_str_eq(result07, "FORBIDDEN SYMBOLS");
+      ck_assert_str_eq(result08, "FORBIDDEN SYMBOLS");
+      ck_assert_str_eq(result09, "FORBIDDEN SYMBOLS");
+  printf("SUCCESSFULL %2d tests for 'FORBIDDEN'\n", 10);
+
+#test OVERBOARD_ERROR
+  char orig_eq00[MAX_LENGTH] = "123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345=";
+  char orig_eq01[MAX_LENGTH] = "1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456=";
+  char orig_eq02[MAX_LENGTH] = "123456789012345678923434234234012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456=";
+    char *result00 = smartcalc(orig_eq00, "");
+    char *result01 = smartcalc(orig_eq01, "");
+    char *result02 = smartcalc(orig_eq02, "");
+      ck_assert_str_ne(result00, "EXCEEDED MAX LENGTH");
+      ck_assert_str_eq(result01, "EXCEEDED MAX LENGTH");
+      ck_assert_str_eq(result02, "FORBIDDEN SYMBOLS");
+  printf("SUCCESSFULL %2d tests for 'OVERBOARD'\n", 3);
+
+#test NOENTRY_ERROR
+  char orig_eq00[MAX_LENGTH] = "=";
+    char *result00 = smartcalc(orig_eq00, "");
+      ck_assert_str_eq(result00, "EMPTY EQUATION");
+  printf("SUCCESSFULL %2d tests for 'NOENTRY'\n", 1);
+
+#test DOTTED_DECIMAL_ERROR
+  char orig_eq00[MAX_LENGTH] = "1.2.3=";
+  char orig_eq01[MAX_LENGTH] = "1..=";
+  char orig_eq02[MAX_LENGTH] = "1+2+3+4.+56.+.345+2..64=";
+  char orig_eq03[MAX_LENGTH] = "1+2..+3=";
+    char *result00 = smartcalc(orig_eq00, "");
+    char *result01 = smartcalc(orig_eq01, "");
+    char *result02 = smartcalc(orig_eq02, "");
+    char *result03 = smartcalc(orig_eq03, "");
+      ck_assert_str_eq(result00, "IMPOSSIBLE DECIMAL");
+      ck_assert_str_eq(result01, "IMPOSSIBLE DECIMAL");
+      ck_assert_str_eq(result02, "IMPOSSIBLE DECIMAL");
+      ck_assert_str_eq(result03, "IMPOSSIBLE DECIMAL");
+  printf("SUCCESSFULL %2d tests for 'DOTTED_DECIMAL'\n", 4);
+
+#test FALSE_DECIMAL_ERROR
+  char orig_eq00[MAX_LENGTH] = ".=";
+    char *result00 = smartcalc(orig_eq00, "");
+      ck_assert_str_eq(result00, "EMPTY DECIMAL");
+  printf("SUCCESSFULL %2d tests for 'FALSE_DECIMAL'\n", 1);
+
+#test FAILED_X_ERROR
+  char orig_eq00[MAX_LENGTH] = "1*x=";
+    char *result00 = smartcalc(orig_eq00, "qx");
+    char *result01 = smartcalc(orig_eq00, "1..");
+    char *result02 = smartcalc(orig_eq00, ".");
+    char *result03 = smartcalc(orig_eq00, "()");
+    char *result04 = smartcalc(orig_eq00, "-.");
+      ck_assert_str_eq(result00, "FORBIDDEN X-SYMBOLS");
+      ck_assert_str_eq(result01, "INCORRECT X-NUMBER");
+      ck_assert_str_eq(result02, "INCORRECT X-NUMBER");
+      ck_assert_str_eq(result03, "FORBIDDEN X-SYMBOLS");
+      ck_assert_str_eq(result04, "INCORRECT X-NUMBER");
+  printf("SUCCESSFULL %2d tests for 'FAILED_X'\n", 5);
+
+#test MISS_OPER_ERROR
+  char orig_eq00[MAX_LENGTH] = "(1+8)3+1=";
+  char orig_eq01[MAX_LENGTH] = "1*3(2)+1=";
+  char orig_eq02[MAX_LENGTH] = "1+2+3+4.+56.+.345+2..64=";
+  char orig_eq03[MAX_LENGTH] = "1+2..+3=";
+    char *result00 = smartcalc(orig_eq00, "");
+    char *result01 = smartcalc(orig_eq01, "");
+    char *result02 = smartcalc(orig_eq02, "");
+    char *result03 = smartcalc(orig_eq03, "");
+      ck_assert_str_eq(result00, "9");
+      ck_assert_str_eq(result01, "1");
+      ck_assert_str_eq(result02, "IMPOSSIBLE DECIMAL");
+      ck_assert_str_eq(result03, "IMPOSSIBLE DECIMAL");
+  printf("SUCCESSFULL %2d tests for 'MISS_OPER'\n", 2);
+
+
+#test BRACKETS_ERROR
+  char orig_eq00[MAX_LENGTH] = "()=";
+  char orig_eq01[MAX_LENGTH] = "(1=";
+//  char orig_eq02[MAX_LENGTH] = "1)=";
+  char orig_eq03[MAX_LENGTH] = "1+()=";
+  char orig_eq04[MAX_LENGTH] = "1-()*4=";
+  char orig_eq05[MAX_LENGTH] = "1-(*4)=";
+  char orig_eq06[MAX_LENGTH] = "1-()=";
+  char orig_eq07[MAX_LENGTH] = "(=";
+  char orig_eq08[MAX_LENGTH] = ")=";
+  char orig_eq09[MAX_LENGTH] = "=";
+  char orig_eq10[MAX_LENGTH] = "((=";
+  char orig_eq11[MAX_LENGTH] = "))=";
+  char orig_eq12[MAX_LENGTH] = "(()=";
+//  char orig_eq13[MAX_LENGTH] = "())=";
+  char orig_eq14[MAX_LENGTH] = "1-(9))=";
+  char orig_eq15[MAX_LENGTH] = "(9)-((1)=";
+  char orig_eq16[MAX_LENGTH] = "3-)3(+3=";
+  char orig_eq17[MAX_LENGTH] = "((3))-)=";
+    char *result00 = smartcalc(orig_eq00, "0");
+    char *result01 = smartcalc(orig_eq01, "0");
+//    char *result02 = smartcalc(orig_eq02, "0");
+    char *result03 = smartcalc(orig_eq03, "0");
+    char *result04 = smartcalc(orig_eq04, "0");
+    char *result05 = smartcalc(orig_eq05, "0");
+    char *result06 = smartcalc(orig_eq06, "0");
+    char *result07 = smartcalc(orig_eq07, "0");
+    char *result08 = smartcalc(orig_eq08, "0");
+    char *result09 = smartcalc(orig_eq09, "0");
+    char *result10 = smartcalc(orig_eq10, "0");
+    char *result11 = smartcalc(orig_eq11, "0");
+    char *result12 = smartcalc(orig_eq12, "0");
+//  char *result13 = smartcalc(orig_eq13, "0");
+  char *result14 = smartcalc(orig_eq14, "0");
+  char *result15 = smartcalc(orig_eq15, "0");
+  char *result16 = smartcalc(orig_eq16, "0");
+  char *result17 = smartcalc(orig_eq17, "0");
+      ck_assert_str_eq(result00, "0");
+      ck_assert_str_eq(result01, "MISSED BREAKS");
+//      ck_assert_str_eq(result02, "TOOMANYDOTS");
+      ck_assert_str_eq(result03, "0");
+      ck_assert_str_eq(result04, "WRONG SEQUENCE");
+      ck_assert_str_eq(result05, "WRONG SEQUENCE");
+      ck_assert_str_eq(result06, "0");
+      ck_assert_str_eq(result07, "FREE OPERATOR");
+      ck_assert_str_eq(result08, "FREE OPERATOR");
+      ck_assert_str_eq(result09, "EMPTY EQUATION");
+      ck_assert_str_eq(result10, "FREE OPERATOR");
+      ck_assert_str_eq(result11, "FREE OPERATOR");
+    ck_assert_str_eq(result12, "MISSED BREAKS");
+//    ck_assert_str_eq(result13, "ERROR");
+    ck_assert_str_eq(result14, "MISSED BREAKS");
+    ck_assert_str_eq(result15, "MISSED BREAKS");
+    ck_assert_str_eq(result16, "WRONG SEQUENCE");
+    ck_assert_str_eq(result17, "WRONG SEQUENCE");
+  printf("SUCCESSFULL %2d tests for 'ERROR'\n", 18);
+
+#test ENDER
+  printf("\n");
